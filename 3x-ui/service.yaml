@@ -7,6 +7,11 @@ spec:
   selector:
     app: 3x-ui
   ports:
-    - name: https
+    - name: trojan
       port: 2053
       targetPort: 2053
+      protocol: TCP
+    - name: http
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
