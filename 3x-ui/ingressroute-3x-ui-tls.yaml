@@ -9,7 +9,7 @@ spec:
   routes:
     - match: HostSNI(`px.awspythoncourses.org`)
       services:
-        - name: 3x-ui
+        - name: x3-ui-svc
           port: 2053
   tls:
     passthrough: true
