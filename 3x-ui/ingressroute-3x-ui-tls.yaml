@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: 3x-ui-tls-passthrough
+  namespace: 3x-ui-system
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: HostSNI(`px.awspythoncourses.org`)
+      services:
+        - name: 3x-ui
+          port: 2053
+  tls:
+    passthrough: true
