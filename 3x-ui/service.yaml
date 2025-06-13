@@ -1,0 +1,12 @@
+piVersion: v1
+kind: Service
+metadata:
+  name: 3x-ui-svc
+  namespace: 3x-ui-system
+spec:
+  selector:
+    app: 3x-ui
+  ports:
+    - name: https
+      port: 2053
+      targetPort: 2053
