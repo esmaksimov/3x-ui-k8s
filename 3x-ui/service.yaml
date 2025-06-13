@@ -7,7 +7,7 @@ spec:
   selector:
     app: 3x-ui
   ports:
-    - name: trojan
+    - name: panel
       port: 2053
       targetPort: 2053
       protocol: TCP
