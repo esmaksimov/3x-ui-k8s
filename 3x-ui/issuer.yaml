@@ -1,16 +1,13 @@
 apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
+kind: Certificate
 metadata:
-  name: letsencrypt-dns
+  name: px-tls
+  namespace: 3x-ui-system
 spec:
-  acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
-    email: maxi.eugene.s@gmail.com
-    privateKeySecretRef:
-      name: letsencrypt-account-key
-    solvers:
-    - dns01:
-        cloudflare:
-          apiTokenSecretRef:
-            name: cloudflare-api-token
-            key: api-token
+  secretName: px-tls
+  commonName: px.awspythoncourses.org
+  dnsNames:
+    - px.awspythoncourses.org
+  issuerRef:
+    name: letsencrypt-dns
+    kind: ClusterIssuer
