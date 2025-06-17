@@ -23,7 +23,7 @@ spec:
   entryPoints:
     - vpn
   routes:
-    - match: HostSNI(`quiz.px.awspythoncourses.org`)
+    - match: HostSNI(`quiz.awspythoncourses.org`)
       services:
         - name: x3-ui-svc
           port: 27282

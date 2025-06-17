@@ -22,6 +22,6 @@ spec:
   issuerRef:
     name: letsencrypt-dns
     kind: ClusterIssuer
-  commonName: quiz.px.awspythoncourses.org
+  commonName: quiz.awspythoncourses.org
   dnsNames:
-    - quiz.px.awspythoncourses.org
+    - quiz.awspythoncourses.org
