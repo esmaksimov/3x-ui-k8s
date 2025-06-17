@@ -11,3 +11,17 @@ spec:
   issuerRef:
     name: letsencrypt-dns
     kind: ClusterIssuer
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: quiz-cert
+  namespace: traefik-system
+spec:
+  secretName: quiz-tls
+  issuerRef:
+    name: letsencrypt-dns
+    kind: ClusterIssuer
+  commonName: quiz.px.awspythoncourses.org
+  dnsNames:
+    - quiz.px.awspythoncourses.org
