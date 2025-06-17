@@ -12,6 +12,6 @@ spec:
       targetPort: 2053
       protocol: TCP
     - name: vpn
-      port: 27282
-      targetPort: 27282
+      port: 8443
+      targetPort: 8443
       protocol: TCP
