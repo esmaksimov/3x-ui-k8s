@@ -26,6 +26,6 @@ spec:
     - match: HostSNI(`quiz.awspythoncourses.org`)
       services:
         - name: x3-ui-svc
-          port: 8443
+          port: 2083
   tls:
     passthrough: true
