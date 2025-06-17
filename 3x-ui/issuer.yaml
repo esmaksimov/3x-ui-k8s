@@ -16,7 +16,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: quiz-cert
-  namespace: traefik-system
+  namespace: 3x-ui-system
 spec:
   secretName: quiz-tls
   issuerRef:
