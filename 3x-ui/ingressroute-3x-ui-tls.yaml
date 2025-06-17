@@ -17,41 +17,15 @@ spec:
 apiVersion: traefik.io/v1alpha1
 kind: IngressRouteTCP
 metadata:
-  name: 3x-ui-vpn
+  name: 3x-ui-trojan
   namespace: 3x-ui-system
 spec:
   entryPoints:
     - vpn
   routes:
-    - match: HostSNI(`px.awspythoncourses.org`)
+    - match: HostSNI(`quiz.px.awspythoncourses.org`)
       services:
         - name: x3-ui-svc
           port: 27282
   tls:
     passthrough: true
-
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: 3x-ui-ui-temp
-#   namespace: 3x-ui-system
-#   annotations:
-#     kubernetes.io/ingress.class: traefik
-#     cert-manager.io/cluster-issuer: letsencrypt-dns
-#     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-# spec:
-#   tls:
-#     - hosts:
-#         - px.awspythoncourses.org
-#       secretName: px-tls
-#   rules:
-#     - host: px.awspythoncourses.org
-#       http:
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: x3-ui-svc
-#                 port:
-#                   number: 2053
