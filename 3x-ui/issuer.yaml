@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: px-tls
-  namespace: remnawave-ns
+  namespace: 3x-ui-system
 spec:
   secretName: px-tls
   commonName: px.awspythoncourses.org
