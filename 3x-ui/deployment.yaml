@@ -20,7 +20,7 @@ spec:
             - containerPort: 2053
               name: https
           volumeMounts:
-            - name: px-tls
+            - name: tls-certs
               mountPath: /etc/3x-ui/certs
               readOnly: true
             - name: quiz-tls
