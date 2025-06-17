@@ -15,7 +15,7 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: quiz-tls
+  name: quiz-cert
   namespace: traefik-system
 spec:
   secretName: quiz-tls
