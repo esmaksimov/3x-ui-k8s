@@ -27,7 +27,7 @@ spec:
               mountPath: /etc/3x-ui/quiz-certs
               readOnly: true
       volumes:
-        - name: px-tls
+        - name: tls-certs
           secret:
             secretName: px-tls
         - name: quiz-tls
