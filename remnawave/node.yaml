@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-node-01
+  namespace: remnawave-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: remnawave-node
+  template:
+    metadata:
+      labels:
+        app: remnawave-node
+    spec:
+      containers:
+        - name: remnawave-node
+          image: remnawave/node:latest
+          env:
+            - name: SSL_CERT
+              valueFrom:
+                secretKeyRef:
+                  name: remnawave-node1-secret
+                  key: SSL_CERT
+          securityContext:
+            capabilities:
+              add: ["NET_ADMIN"]

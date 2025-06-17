@@ -1,0 +1,32 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: remnawave-panel
+  namespace: remnawave-ns
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`px.awspythoncourses.org`)
+      services:
+        - name: remnawave-svc
+          port: 2053
+  tls:
+    secretName: px-tls
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: remnawave-vpn
+  namespace: remnawave-ns
+spec:
+  entryPoints:
+    - vpn
+  routes:
+    - match: HostSNI(`px.awspythoncourses.org`)
+      services:
+        - name: remnawave-svc
+          port: 27282
+  tls:
+    secretName: px-tls
