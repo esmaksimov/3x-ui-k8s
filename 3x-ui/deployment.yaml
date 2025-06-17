@@ -23,7 +23,17 @@ spec:
             - name: tls-certs
               mountPath: /etc/3x-ui/certs
               readOnly: true
+            # - name: quiz-tls
+            #   mountPath: /etc/3x-ui/quiz-certs
+            #   readOnly: true
       volumes:
         - name: tls-certs
           secret:
             secretName: px-tls
+        - name: data
+          hostPath:
+            path: /data/3x-ui
+            type: DirectoryOrCreate
+        # - name: quiz-tls
+        #   secret:
+        #     secretName: quiz-tls
