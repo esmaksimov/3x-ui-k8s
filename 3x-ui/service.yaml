@@ -19,3 +19,7 @@ spec:
       port: 36028
       targetPort: 36028
       protocol: TCP
+    - name: trojangoogle
+      port: 49245
+      targetPort: 49245
+      protocol: TCP
