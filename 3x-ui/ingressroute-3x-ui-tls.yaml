@@ -21,11 +21,27 @@ metadata:
   namespace: 3x-ui-system
 spec:
   entryPoints:
-    - vpn
+    - grpc_real
   routes:
     - match: HostSNI(`quiz.awspythoncourses.org`)
       services:
         - name: x3-ui-svc
           port: 2083
+  tls:
+    passthrough: true
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: 3x-ui-reality
+  namespace: 3x-ui-system
+spec:
+  entryPoints:
+    - vless_gh
+  routes:
+    - match: HostSNI(`*`)
+      services:
+        - name: x3-ui-svc
+          port: 36028
   tls:
     passthrough: true

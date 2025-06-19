@@ -11,7 +11,11 @@ spec:
       port: 2053
       targetPort: 2053
       protocol: TCP
-    - name: vpn
+    - name: grpc_real
       port: 2083
       targetPort: 2083
+      protocol: TCP
+    - name: vless_gh
+      port: 36028
+      targetPort: 36028
       protocol: TCP
