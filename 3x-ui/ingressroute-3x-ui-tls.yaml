@@ -21,7 +21,7 @@ metadata:
   namespace: 3x-ui-system
 spec:
   entryPoints:
-    - grpc_real
+    - grpcreal
   routes:
     - match: HostSNI(`quiz.awspythoncourses.org`)
       services:
@@ -37,7 +37,7 @@ metadata:
   namespace: 3x-ui-system
 spec:
   entryPoints:
-    - vless_gh
+    - vlessgh
   routes:
     - match: HostSNI(`*`)
       services:
