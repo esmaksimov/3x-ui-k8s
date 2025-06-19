@@ -9,7 +9,7 @@ spec:
   dnsNames:
     - px.awspythoncourses.org
   issuerRef:
-    name: letsencrypt-dns
+    name: letsencrypt-dns-route53
     kind: ClusterIssuer
 ---
 apiVersion: cert-manager.io/v1
@@ -20,7 +20,7 @@ metadata:
 spec:
   secretName: quiz-tls
   issuerRef:
-    name: letsencrypt-dns
+    name: letsencrypt-dns-route53
     kind: ClusterIssuer
   commonName: quiz.awspythoncourses.org
   dnsNames:
